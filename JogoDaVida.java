@@ -19,13 +19,11 @@ public class JogoDaVida extends JFrame {
                     for (int x = 0; x < 5; x++) {
                         int index = y * 5 + x;
                         if (glider[index] == 1) {
-                            // Célula viva (bolinha preta maior)
                             g.fillOval(x * 60, y * 60, 50, 50);
                         } else {
-                            // Célula morta (caveirinha maior)
-                            Font largerFont = g.getFont().deriveFont(36f); // Tamanho da fonte aumentado para 36
+                            Font largerFont = g.getFont().deriveFont(36f);
                             g.setFont(largerFont);
-                            g.drawString("☠", x * 60 + 10, y * 60 + 40); // Ajuste na posição
+                            g.drawString("☠", x * 60 + 10, y * 60 + 40); 
                         }
                     }
                 }
