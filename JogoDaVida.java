@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 public class JogoDaVida extends JFrame {
 
     private int vivos = 0;
-    private int[] glider = new int[36];
-    private int[] gliderTemp = new int[36];
+    private int[] glider = new int[25];
+    private int[] gliderTemp = new int[25];
     private JPanel panel;
 
     public JogoDaVida() {
@@ -19,11 +19,13 @@ public class JogoDaVida extends JFrame {
                     for (int x = 0; x < 5; x++) {
                         int index = y * 5 + x;
                         if (glider[index] == 1) {
-                            // Célula viva (bolinha preta)
-                            g.fillOval(x * 30, y * 30, 30, 30);
+                            // Célula viva (bolinha preta maior)
+                            g.fillOval(x * 60, y * 60, 50, 50);
                         } else {
-                            // Célula morta (caveirinha)
-                            g.drawString("☠", x * 30 + 10, y * 30 + 20);
+                            // Célula morta (caveirinha maior)
+                            Font largerFont = g.getFont().deriveFont(36f); // Tamanho da fonte aumentado para 36
+                            g.setFont(largerFont);
+                            g.drawString("☠", x * 60 + 10, y * 60 + 40); // Ajuste na posição
                         }
                     }
                 }
@@ -32,7 +34,7 @@ public class JogoDaVida extends JFrame {
 
         getContentPane().add(panel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(200, 200);
+        setSize(330, 340); // Tamanho da janela aumentado para 300x300
         setLocationRelativeTo(null);
         setVisible(true);
 
