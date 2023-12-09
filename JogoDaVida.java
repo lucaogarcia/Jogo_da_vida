@@ -32,7 +32,7 @@ public class JogoDaVida extends JFrame {
 
         getContentPane().add(panel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(330, 340); // Tamanho da janela aumentado para 300x300
+        setSize(330, 340); 
         setLocationRelativeTo(null);
         setVisible(true);
 
